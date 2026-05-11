@@ -5,6 +5,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.tools import DuckDuckGoSearchRun
+from langchain_groq import ChatGroq
 
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Medical Study Assistant", page_icon="🩺", layout="wide")
@@ -13,8 +14,12 @@ st.set_page_config(page_title="Medical Study Assistant", page_icon="🩺", layou
 @st.cache_resource
 def get_resources():
     embeddings = HuggingFaceEmbeddings(model_name="paraphrase-multilingual-MiniLM-L12-v2")
-    llm = Ollama(model="llama3.2")
-    search = DuckDuckGoSearchRun()
+load_llm():
+    return ChatGroq(
+        temperature=0, 
+        groq_api_key="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", 
+        model_name="llama-3.1-70b-versatile"
+    )    search = DuckDuckGoSearchRun()
     return embeddings, llm, search
 
 embeddings_model, llm, search_tool = get_resources()

@@ -1,10 +1,11 @@
 streamlit
 langchain
 langchain-community
+langchain-groq
 langchain-huggingface
 faiss-cpu
 sentence-transformers
 duckduckgo-search
 python-docx
-pytesseract
-Pillow
+easyocr
+opencv-python-headless
